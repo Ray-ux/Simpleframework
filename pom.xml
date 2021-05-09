@@ -8,9 +8,6 @@
     <artifactId>Simpleframework</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-<!--    <properties>-->
-<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-<!--    </properties>-->
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
@@ -21,6 +18,11 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
