@@ -11,7 +11,7 @@ import java.util.Date;
  * @author 张烈文
  */
 @Data
-@Builder
+//@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class HeadLine {

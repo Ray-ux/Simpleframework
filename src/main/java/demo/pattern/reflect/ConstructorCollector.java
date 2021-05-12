@@ -1,11 +1,11 @@
-package demo.pattern.factory.reflect;
+package demo.pattern.reflect;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
 public class ConstructorCollector {
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Class clazz = Class.forName("demo.pattern.factory.reflect.ReflectTarget");
+        Class clazz = Class.forName("demo.pattern.reflect.ReflectTarget");
 
 //        获取所有的公有的构造方法
         Constructor[] constructors = clazz.getConstructors();

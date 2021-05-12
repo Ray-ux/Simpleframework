@@ -1,4 +1,4 @@
-package demo.pattern.factory.reflect;
+package demo.pattern.reflect;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -8,7 +8,7 @@ public class MethodCollector {
 
     public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
 
-        Class<?> aClass = Class.forName("demo.pattern.factory.reflect.ReflectTarget");
+        Class<?> aClass = Class.forName("demo.pattern.reflect.ReflectTarget");
 //        2获取所有的公有方法
         Method[] methods = aClass.getMethods();
 

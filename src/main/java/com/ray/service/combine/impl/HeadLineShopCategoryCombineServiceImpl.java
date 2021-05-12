@@ -23,10 +23,11 @@ public class HeadLineShopCategoryCombineServiceImpl implements HeadLineShopCateg
         ShopCategory shopCategoryCondition = new ShopCategory();
         Result<List<ShopCategory>> listResult1 = shopCategoryService.queryShopCategory(shopCategoryCondition, 1, 5);
 
-        MainPageInfoDTO mainPageInfoDTO = MainPageInfoDTO.builder()
-                .headLineList(listResult.getData())
-                .shopCategoryList(listResult1.getData())
-                .build();
-        return ResultUtil.success(mainPageInfoDTO);
+//        MainPageInfoDTO mainPageInfoDTO = MainPageInfoDTO.builder()
+//                .headLineList(listResult.getData())
+//                .shopCategoryList(listResult1.getData())
+//                .build();
+//        return ResultUtil.success(mainPageInfoDTO);
+        return null;
     }
 }

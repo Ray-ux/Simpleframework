@@ -14,7 +14,7 @@ import java.util.List;
  * @author 张烈文
  */
 @Data
-@Builder
+//@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class MainPageInfoDTO {

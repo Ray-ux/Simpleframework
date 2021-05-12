@@ -1,6 +1,5 @@
-package demo.pattern.factory.reflect;
+package demo.pattern.reflect;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
@@ -9,7 +8,7 @@ public class FieldCollector {
 
     public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
 //        获取Class对象
-        Class<?> aClass = Class.forName("demo.pattern.factory.reflect.ReflectTarget");
+        Class<?> aClass = Class.forName("demo.pattern.reflect.ReflectTarget");
 //        获取所有公有的字段
         Field[] fields = aClass.getFields();
         System.out.println("获取所有的公有的字段");

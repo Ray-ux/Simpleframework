@@ -1,6 +1,4 @@
-package demo.pattern.factory.reflect;
-
-import com.sun.java.swing.plaf.windows.WindowsDesktopIconUI;
+package demo.pattern.reflect;
 
 public class ReflectTarget {
 
@@ -78,7 +76,7 @@ public class ReflectTarget {
         System.out.println(reflectTargetClass == aClass);
 
 //        第三种方式获取Class对象
-        Class<?> aClass1 = Class.forName("demo.pattern.factory.reflect.ReflectTarget");
+        Class<?> aClass1 = Class.forName("demo.pattern.reflect.ReflectTarget");
         System.out.println("3rd:" + aClass1.getName());
         System.out.println(reflectTargetClass == aClass1);
 
