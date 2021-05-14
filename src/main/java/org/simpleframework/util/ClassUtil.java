@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
@@ -129,5 +131,25 @@ public class ClassUtil {
      */
     public static ClassLoader getClassLoader() {
         return Thread.currentThread().getContextClassLoader();
+    }
+
+
+    /**
+     * 实例化class,
+     * 简易版框架，这里先只通过无参构造函数创建实例
+     * @param clazz
+     * @param accessible  是否支持private类型的构造函数
+     * @param <T>  class的类型
+     * @return
+     */
+    public static <T> T newInstance(Class<?> clazz,boolean accessible)  {
+        try {
+            Constructor<?> declaredConstructor = clazz.getDeclaredConstructor();
+            declaredConstructor.setAccessible(accessible);
+            return (T) declaredConstructor.newInstance();
+        } catch (Exception e) {
+            log.error("newInstance error", e);
+            throw new RuntimeException(e);
+        }
     }
 }

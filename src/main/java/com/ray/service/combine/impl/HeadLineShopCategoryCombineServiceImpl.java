@@ -8,9 +8,11 @@ import com.ray.entity.dto.ResultUtil;
 import com.ray.service.combine.HeadLineShopCategoryCombineService;
 import com.ray.service.solo.HeadLineService;
 import com.ray.service.solo.ShopCategoryService;
+import org.simpleframework.core.annotation.Service;
 
 import java.util.List;
 
+@Service
 public class HeadLineShopCategoryCombineServiceImpl implements HeadLineShopCategoryCombineService {
     private HeadLineService headLineService;
     private ShopCategoryService shopCategoryService;
