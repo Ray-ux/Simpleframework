@@ -13,6 +13,7 @@ import org.simpleframework.util.ValidationUtil;
 import java.lang.annotation.Annotation;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 /**
  * @author 张烈文
@@ -103,6 +104,99 @@ public class BeanContainer {
      */
     public int size() {
         return beanMap.size();
+    }
+
+
+    /**
+     * 添加一个class对象及其Bean实例
+     *
+     * @param clazz clazz对象
+     * @param bean  bean实例
+     * @return 原有的Bean实例，没有则返回
+     */
+
+    public Object addBean(Class<?> clazz, Object bean) {
+
+        return beanMap.put(clazz, bean);
+    }
+
+
+    /**
+     * 移除一个IOC容器管理的对象
+     * @param clazz
+     * @return
+     */
+    public Object removeBean(Class<?> clazz) {
+
+        return beanMap.remove(clazz);
+    }
+
+    /**
+     * 根据Class对象获取Bean实例
+     * @param clazz
+     * @return
+     */
+    public Object getBean(Class<?> clazz) {
+        return beanMap.get(clazz);
+    }
+
+
+    /**
+     * 获取容器管理的所有Class对象集合
+     * @return
+     */
+    public Set<Class<?>> getClasses() {
+        return beanMap.keySet();
+    }
+
+    /**
+     * 获取容器中所有的Bean集合
+     * @return
+     */
+   public Collection<Object> getBeans() {
+        return beanMap.values();
+    }
+
+    /**
+     * 根据注解筛选出Bean的Class集合
+     *
+     * @param annotation
+     */
+    public Set<Class<?>> getClassesByAnnotation(Class<? extends Annotation> annotation) {
+
+//        1.获取beanMap的所有class对象
+        Set<Class<?>> classSet = getClasses();
+        if (ValidationUtil.isEmpty(classSet)) {
+            log.warn("nothing in beanMap");
+            return null;
+        }
+//        2.通过注解筛选被注解标记的class对象，并添加到classSet里
+        Set<Class<?>> collect = classSet.stream().filter(aClass -> aClass.isAnnotationPresent(annotation))
+                .collect(Collectors.toSet());
+        return collect.size() > 0 ? collect : null;
+
+    }
+
+
+    /**
+     * 通过接口或者父类获取实现类或者子类的Class集合，不包括其本身
+     *
+     * @param interfaceOrClass
+     * @return Class集合
+     */
+    public Set<Class<?>> getClassesBySuper(Class<?> interfaceOrClass) {
+
+//        1.获取beanMap的所有class对象
+        Set<Class<?>> classSet = getClasses();
+        if (ValidationUtil.isEmpty(classSet)) {
+            log.warn("nothing in beanMap");
+            return null;
+        }
+//        2.判断keySet里的元素是否是传入的接口或者类的子类，如果是就将其添加到classSet里
+        Set<Class<?>> collect = classSet.stream().filter(aClass -> interfaceOrClass.isAssignableFrom(aClass))
+                .collect(Collectors.toSet());
+        return collect.size() > 0 ? collect : null;
+
     }
 }
 
