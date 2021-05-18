@@ -1,37 +1,43 @@
 package com.ray.service.solo.impl;
 
+import com.ray.entity.bo.HeadLine;
 import com.ray.entity.bo.ShopCategory;
 import com.ray.entity.dto.Result;
+import com.ray.service.solo.HeadLineService;
 import com.ray.service.solo.ShopCategoryService;
 import org.simpleframework.core.annotation.Service;
 
 import java.util.List;
 
 
+/**
+ * @author 张烈文
+ */
 @Service
-public class HeadLineServiceImpl implements ShopCategoryService {
+public class HeadLineServiceImpl implements HeadLineService {
+
     @Override
-    public Result<Boolean> addShopCategory(ShopCategory shopCategory) {
+    public Result<Boolean> addHeadLine(HeadLine headLine) {
         return null;
     }
 
     @Override
-    public Result<Boolean> removeShopCategory(int shopCategoryId) {
+    public Result<Boolean> removeHeadLine(int headLineId) {
         return null;
     }
 
     @Override
-    public Result<Boolean> modifyShopCategory(ShopCategory shopCategory) {
+    public Result<Boolean> modifyHeadLine(HeadLine headLine) {
         return null;
     }
 
     @Override
-    public Result<ShopCategory> queryShopCategoryById(int shopCategoryId) {
+    public Result<HeadLine> queryHeadLineById(int headLineId) {
         return null;
     }
 
     @Override
-    public Result<List<ShopCategory>> queryShopCategory(ShopCategory shopCategoryCondition, int pageIndex, int pageSize) {
+    public Result<List<HeadLine>> queryHeadLine(HeadLine headLineCondition, int pageIndex, int pageSize) {
         return null;
     }
 }

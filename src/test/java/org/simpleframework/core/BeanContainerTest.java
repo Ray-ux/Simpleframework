@@ -3,6 +3,7 @@ package org.simpleframework.core;
 import com.ray.controller.DispatcherServlet;
 import com.ray.controller.frontend.MainPageController;
 import com.ray.service.solo.HeadLineService;
+import com.ray.service.solo.impl.HeadLineServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.*;
 import org.simpleframework.core.annotation.Controller;
@@ -55,7 +56,6 @@ public class BeanContainerTest {
     @Order(3)
     @Test
     public void getClassesBySupperTest() {
-        Assertions.assertEquals(1, beanContainer.getClassesBySuper(HeadLineService.class).size());
-        System.out.println(beanContainer.getClassesBySuper(HeadLineService.class).size());
+        Assertions.assertEquals(true, beanContainer.getClassesBySuper(HeadLineService.class).contains(HeadLineServiceImpl.class));
     }
 }

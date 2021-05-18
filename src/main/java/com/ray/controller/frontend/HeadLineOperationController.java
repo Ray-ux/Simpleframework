@@ -4,6 +4,7 @@ import com.ray.entity.bo.HeadLine;
 import com.ray.entity.dto.Result;
 import com.ray.service.solo.HeadLineService;
 import org.simpleframework.core.annotation.Controller;
+import org.simpleframework.inject.annotation.Autowired;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,8 @@ import java.util.List;
 
 @Controller
 public class HeadLineOperationController {
+
+    @Autowired
     private HeadLineService headLineService;
 
    public Result<Boolean> addHeadLine(HttpServletRequest req, HttpServletResponse reps) {
