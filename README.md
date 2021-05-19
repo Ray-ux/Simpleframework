@@ -6,7 +6,7 @@
 - 反射机制
 - 熟悉注解
 
-###### 设计模式
+##### 设计模式
 [简单工厂模式](https://github.com/Ray-ux/Simpleframework/tree/master/src/main/java/demo/pattern/factory/simple) </br>
 优点：
 
@@ -129,8 +129,10 @@ public static void main(String[] args) throws NoSuchMethodException, IllegalAcce
 }
 ```
 报错：
-
-![1620993794463](C:\Users\张烈文\AppData\Roaming\Typora\typora-user-images\1620993794463.png)
+```java
+Cannot reflectively create ennum objects
+```
+[comment]: <> (![1620993794463]&#40;C:\Users\张烈文\AppData\Roaming\Typora\typora-user-images\1620993794463.png&#41;)
 
 
 ### 回归正题
@@ -142,7 +144,7 @@ IoC具备的最基本功能：
 
 需要实现的点：
 
-![大致流程](C:\Users\张烈文\AppData\Roaming\Typora\typora-user-images\1620653293751.png)
+[comment]: <> (![大致流程]&#40;C:\Users\张烈文\AppData\Roaming\Typora\typora-user-images\1620653293751.png&#41;)
 
 - [创建注解](https://github.com/Ray-ux/Simpleframework/tree/master/src/main/java/org/simpleframework/core/annotation) 
 
