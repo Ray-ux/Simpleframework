@@ -7,7 +7,7 @@
 - 熟悉注解
 
 ###### 设计模式
-[简单工厂模式]() </br>
+[简单工厂模式](https://github.com/Ray-ux/Simpleframework/tree/master/src/main/java/demo/pattern/factory/simple) </br>
 优点：
 
 - 可以对创建的对象进行“加工”，对客户端隐藏相关细节 
@@ -17,7 +17,7 @@
 - 违反开闭原则（对修改关闭，对扩展开放），新增|删除子类都需要去修改工厂类的代码
 - 创建对象的逻辑复杂|创建对象过多而造成代码臃肿
 
-[工厂方法模式]() </br>
+[工厂方法模式](https://github.com/Ray-ux/Simpleframework/tree/master/src/main/java/demo/pattern/factory/method) </br>
 优点：
 
 - 遵循开闭原则
@@ -29,7 +29,7 @@
 - 添加子类的时候“拖家带口”，还需要添加工厂类
 - 只支持同一类产品的创建
 
-[抽象工厂模式]() </br>
+[抽象工厂模式](https://github.com/Ray-ux/Simpleframework/tree/master/src/main/java/demo/pattern/factory/abstractf) </br>
 优点：
 
 - 解决了工厂方法模式只支持生成一种产品的弊端
@@ -41,9 +41,9 @@
 
 [单例模式]() </br>
 
-- [枚举饿汉]()
+- [枚举饿汉](https://github.com/Ray-ux/Simpleframework/blob/master/src/main/java/demo/pattern/singleton/EnumStarvingSingleton.java)
 
-- [双重检查懒汉]()
+- [双重检查懒汉](https://github.com/Ray-ux/Simpleframework/blob/master/src/main/java/demo/pattern/singleton/LazyDoubleCheckSingleton.java)
 
 问题：
 
