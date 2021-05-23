@@ -24,7 +24,7 @@ public class ClassUtil {
     public static final String FILE_PROTOCOL = "file";
 
     /**
-     * 获取包下类集合
+     * 获取包下所有Class对象的集合
      *
      * @param packageName
      * @return
